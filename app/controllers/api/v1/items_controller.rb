@@ -30,4 +30,7 @@ class Api::V1::ItemsController < ApplicationController
     Item.find(params[:id]).destroy
     redirect_to root_url
   end
+  
+  def create
+    
 end
