@@ -1,5 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
   respond_to :JSON
+  protect_from_forgery :except => :destroy
 #   When I send a GET request to `/api/v1/items`
 # I receive a 200 JSON response containing all items
 # And each item has an id, name, description, and image_url but not the created_at or updated_at
@@ -26,7 +27,7 @@ class Api::V1::ItemsController < ApplicationController
   end
   
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
+    Item.find(params[:id]).destroy
+    redirect_to root_url
   end
 end
