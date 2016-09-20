@@ -5,14 +5,14 @@ describe "User can see all items" do
     #   When I send a GET request to `/api/v1/items`
     # I receive a 200 JSON response containing all items
     # And each item has an id, name, description, and image_url but not the created_at or updated_at
-    items = create(:item)
+    item = Item.create(name: "hammer", description: "you can do it", image_url: "winning.com")
+    item = Item.create(name: "nail", description: "get in there", image_url: "winner.com")
     get 'api/v1/items'
     
     json = JSON.parse(response.body)
     
     expect(response).to be_success
-    require "pry"; binding.pry
-    expect(json['items'].length).to eq(500)
+    expect(json.length).to eq(2)
     
   end
   
