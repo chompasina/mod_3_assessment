@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem 'figaro'
 gem 'faraday'
+gem 'responders'
 
 group :development do
   gem "spring"
@@ -27,6 +28,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
   gem "pry", :require => "pry"
-  gem 'vcr'
-  gem 'webmock'
+  # gem 'vcr'
+  # gem 'webmock'
 end
