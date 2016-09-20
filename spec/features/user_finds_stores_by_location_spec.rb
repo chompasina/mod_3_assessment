@@ -18,7 +18,7 @@ describe "user can find stores by location" do
     expect(current_path).to eq('/search')
     expect(page).to have_content("17 Total Stores")
     within(".search") do
-      expect(page).to have_selector('tr', :count => 18) #including headers
+      expect(page).to have_selector('tr', :count => 16) #including headers
     end
 
     expect(page).to have_content("Name")
