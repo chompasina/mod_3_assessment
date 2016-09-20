@@ -22,7 +22,7 @@ class BestBuyService
   end
   
   def total(zip)
-    @response = Faraday.get("https://api.bestbuy.com/v1/stores(area(#{zip},25))?format=json&show=storeType,name,city,distance,phone&apiKey=7a3heu7emrjz6qbsugmepbv6&page=1")
+    @response = Faraday.get("https://api.bestbuy.com/v1/stores(area(#{zip},25))?format=json&show=storeType,name,city,distance,phone&apiKey=#{ENV['best_buy_key']}&page=1")
     @total = JSON.parse(@response.body)["total"]
   end
 end
