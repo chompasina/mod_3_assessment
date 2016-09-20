@@ -19,4 +19,14 @@ class Api::V1::ItemsController < ApplicationController
     respond_with @items
   end
   
+  def show
+    @item = Item.find(params[:id])
+    
+    respond_with @item
+  end
+  
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+  end
 end
