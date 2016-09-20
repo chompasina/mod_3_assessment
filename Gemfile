@@ -28,6 +28,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
   gem "pry", :require => "pry"
-  gem 'vcr'
-  gem 'webmock'
+  # gem 'vcr'
+  # gem 'webmock'
 end
