@@ -1,8 +1,9 @@
 FactoryGirl.define do
-  item do |n|
+  
+  factory :item do |n|
     name "name-#{n}"
-    description
-    image_url
+    description "this thing"
+    image_url "google.com"
   end
   # <factories for each model go here>
 end
